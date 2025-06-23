@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,22 +20,20 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // Prevent background scrolling when menu is open
     document.body.style.overflow = !isMenuOpen ? 'hidden' : '';
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    
-    // Close mobile menu if open
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = '';
-    }
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = '';
   };
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Academics", path: "/academics" },
+    { name: "Projects", path: "/projects" },
+    { name: "Awards", path: "/awards" },
+  ];
 
   return (
     <header
@@ -45,39 +45,33 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
+        <Link 
+          to="/" 
           className="flex items-center space-x-2"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
-          aria-label="Pulse Robot"
+          aria-label="Mrityunjay's Portfolio"
         >
-          <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
-            className="h-7 sm:h-8" 
-          />
-        </a>
+          <span className="text-xl font-bold">Mrityunjay</span>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a 
-            href="#" 
-            className="nav-link"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
-          >
-            Home
-          </a>
-          <a href="#features" className="nav-link">About</a>
-          <a href="#details" className="nav-link">Contact</a>
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={cn(
+                "nav-link transition-colors",
+                location.pathname === item.path
+                  ? "text-blue-600 font-medium"
+                  : "text-gray-700 hover:text-blue-600"
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
         </nav>
 
-        {/* Mobile menu button - increased touch target */}
+        {/* Mobile menu button */}
         <button 
           className="md:hidden text-gray-700 p-3 focus:outline-none" 
           onClick={toggleMenu}
@@ -87,44 +81,27 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation - improved for better touch experience */}
+      {/* Mobile Navigation */}
       <div className={cn(
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
-          <a 
-            href="#" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Home
-          </a>
-          <a 
-            href="#features" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            About
-          </a>
-          <a 
-            href="#details" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Contact
-          </a>
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={cn(
+                "text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 transition-colors",
+                location.pathname === item.path
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700"
+              )}
+              onClick={closeMenu}
+            >
+              {item.name}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
