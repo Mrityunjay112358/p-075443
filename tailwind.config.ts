@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,14 +62,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Pulse Robot
 				pulse: {
 					"50": "#fff7ed",
 					"100": "#ffedd5",
 					"200": "#fed7aa",
 					"300": "#fdba74",
 					"400": "#fb923c",
-					"500": "#f97316", // Primary orange
+					"500": "#f97316",
 					"600": "#ea580c",
 					"700": "#c2410c",
 					"800": "#9a3412",
@@ -78,7 +76,7 @@ export default {
 					"950": "#431407",
 				},
 				dark: {
-					"900": "#121212", // Almost black
+					"900": "#121212",
 					"800": "#1e1e1e",
 					"700": "#2d2d2d",
 					"600": "#3d3d3d",
@@ -142,10 +140,10 @@ export default {
 				'pulse-gradient': 'linear-gradient(180deg, rgba(249,115,22,0.8) 0%, rgba(249,115,22,0) 100%)',
 			},
 			fontFamily: {
-				'sans': ['Inter', 'sans-serif'],
-				'display': ['Brockmann', 'SF Pro Display', 'Inter', 'sans-serif'],
-				'brockmann': ['Brockmann', 'serif'],
-				'playfair': ['"Playfair Display"', 'serif'],
+				'sans': ['Inter', 'Space Grotesk', 'system-ui', 'sans-serif'],
+				'display': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'Courier New', 'monospace'],
+				'space': ['Space Grotesk', 'sans-serif'],
 			},
 			boxShadow: {
 				'elegant': '0 4px 20px rgba(0, 0, 0, 0.08)',
