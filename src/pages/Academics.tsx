@@ -144,30 +144,6 @@ const Academics = () => {
               ))}
             </div>
           </div>
-
-          {/* Achievements */}
-          <div>
-            <h2 className="text-3xl font-bold text-center mb-12 text-visible flex items-center justify-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
-                <Award className="w-6 h-6 text-black" />
-              </div>
-              Achievements & Recognition
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {achievements.map((achievement, index) => {
-                const IconComponent = achievement.icon;
-                return (
-                  <div key={index} className="glass-card p-6 hover:scale-105 transition-all duration-500 group animate-glow">
-                    <div className={`w-14 h-14 bg-gradient-to-r ${achievement.color} rounded-full flex items-center justify-center mb-4 shadow-lg animate-float`} style={{ animationDelay: `${index * 0.1}s` }}>
-                      <IconComponent className="w-7 h-7 text-black" />
-                    </div>
-                    <h3 className="text-xl font-bold text-visible mb-3">{achievement.title}</h3>
-                    <p className="text-muted leading-relaxed">{achievement.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
         </div>
       </div>
     </div>
