@@ -38,19 +38,24 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-500",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
+          ? "bg-black/80 backdrop-blur-xl border-b border-cyan-500/20 shadow-lg shadow-cyan-500/10" 
           : "bg-transparent"
       )}
     >
-      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container flex items-center justify-between px-6 lg:px-8">
         <Link 
           to="/" 
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-3 group"
           aria-label="Mrityunjay's Portfolio"
         >
-          <span className="text-xl font-bold">Mrityunjay</span>
+          <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
+            <span className="text-black font-bold text-lg">M</span>
+          </div>
+          <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Mrityunjay
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -60,20 +65,23 @@ const Navbar = () => {
               key={item.name}
               to={item.path}
               className={cn(
-                "nav-link transition-colors",
+                "relative px-4 py-2 transition-all duration-300 hover:text-cyan-400",
                 location.pathname === item.path
-                  ? "text-blue-600 font-medium"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-cyan-400"
+                  : "text-gray-300 hover:text-white"
               )}
             >
               {item.name}
+              {location.pathname === item.path && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full" />
+              )}
             </Link>
           ))}
         </nav>
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none" 
+          className="md:hidden text-gray-300 hover:text-cyan-400 p-3 focus:outline-none transition-colors" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -83,19 +91,19 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col pt-20 px-6 md:hidden transition-all duration-500 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-8 items-center mt-8">
+        <nav className="flex flex-col space-y-6 items-center mt-8">
           {navItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
               className={cn(
-                "text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 transition-colors",
+                "text-2xl font-medium py-4 px-8 w-full text-center rounded-xl transition-all duration-300 border border-gray-800 hover:border-cyan-500/50 hover:bg-cyan-500/10",
                 location.pathname === item.path
-                  ? "text-blue-600 bg-blue-50"
-                  : "text-gray-700"
+                  ? "text-cyan-400 border-cyan-500/50 bg-cyan-500/10"
+                  : "text-gray-300 hover:text-white"
               )}
               onClick={closeMenu}
             >
