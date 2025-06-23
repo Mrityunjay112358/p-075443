@@ -1,36 +1,58 @@
 
 import React from "react";
 import Navbar from "@/components/Navbar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { BookOpen, Award, TrendingUp, Star, Zap } from "lucide-react";
+import { Award, BookOpen, Trophy, Clock, Star, Target } from "lucide-react";
 
 const Academics = () => {
-  const subjects = [
-    { name: "Chemistry", grade: "A*", percentage: 99, color: "from-green-400 to-emerald-500", note: "Grade improved from 98% to 99% after inquiry" },
-    { name: "Mathematics", grade: "A*", percentage: 95, color: "from-blue-400 to-cyan-500" },
-    { name: "Physics", grade: "A*", percentage: 94, color: "from-purple-400 to-violet-500" },
-    { name: "Biology", grade: "A*", percentage: 92, color: "from-pink-400 to-rose-500" },
-    { name: "English Literature", grade: "A", percentage: 88, color: "from-orange-400 to-yellow-500" },
-    { name: "Computer Science", grade: "A*", percentage: 96, color: "from-cyan-400 to-teal-500" },
-    { name: "Business Studies", grade: "A", percentage: 89, color: "from-indigo-400 to-purple-500" },
+  const publishedResults = [
+    { subject: "Business Studies", grade: "A*", score: "95%", color: "from-green-400 to-emerald-500" },
+    { subject: "English Literature", grade: "A*", score: "91%", color: "from-blue-400 to-cyan-500" },
+    { subject: "English Language", grade: "A*", score: "90%", color: "from-purple-400 to-violet-500" },
+    { subject: "Chemistry", grade: "A*", score: "98-99%", color: "from-yellow-400 to-orange-500" },
+    { subject: "Additional Mathematics", grade: "A*", score: "98%", color: "from-red-400 to-pink-500" },
+    { subject: "Physics", grade: "A*", score: "97%", color: "from-indigo-400 to-blue-500" },
+    { subject: "French", grade: "A*", score: "97%", color: "from-teal-400 to-green-500" }
   ];
 
-  const pendingSubjects = [
-    "Economics",
-    "History", 
-    "Geography"
+  const pendingResults = [
+    { subject: "Global Perspectives", status: "Pending", color: "from-gray-400 to-gray-500" },
+    { subject: "Computer Science", status: "Pending", color: "from-gray-400 to-gray-500" },
+    { subject: "Extended Mathematics", status: "Pending", color: "from-gray-400 to-gray-500" }
   ];
 
-  const getGradeColor = (grade: string) => {
-    switch (grade) {
-      case "A*": return "bg-gradient-to-r from-green-400 to-emerald-500";
-      case "A": return "bg-gradient-to-r from-blue-400 to-cyan-500";
-      case "B": return "bg-gradient-to-r from-yellow-400 to-orange-500";
-      default: return "bg-gradient-to-r from-gray-400 to-gray-500";
+  const achievements = [
+    {
+      title: "Excellence in Chemistry",
+      description: "School Top Achievement",
+      icon: Trophy,
+      color: "from-yellow-400 to-orange-500"
+    },
+    {
+      title: "Excellence in French",
+      description: "School Top Achievement", 
+      icon: Trophy,
+      color: "from-blue-400 to-cyan-500"
+    },
+    {
+      title: "Cambridge Science Competition",
+      description: "National Winner - Research Paper",
+      icon: Award,
+      color: "from-purple-400 to-pink-500"
+    },
+    {
+      title: "LingHacks Hackathon 2025",
+      description: "2nd Place Winner - $450 Prize",
+      icon: Star,
+      color: "from-green-400 to-emerald-500"
+    },
+    {
+      title: "AIME Qualification",
+      description: "Qualified for American Invitational Mathematics Examination",
+      icon: Target,
+      color: "from-red-400 to-orange-500"
     }
-  };
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -38,7 +60,7 @@ const Academics = () => {
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20" />
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-green-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <Navbar />
@@ -47,104 +69,103 @@ const Academics = () => {
         <div className="container mx-auto max-w-7xl">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-green-500/20 rounded-full border border-blue-500/30 mb-8 backdrop-blur-xl">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 mb-8 backdrop-blur-xl">
               <BookOpen className="w-5 h-5 text-blue-400 mr-3" />
-              <span className="text-blue-400 text-sm font-medium text-visible">Academic Journey</span>
+              <span className="text-blue-400 text-sm font-medium text-visible">Academic Portfolio</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-visible">
               Academic{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-green-500 to-cyan-400 bg-clip-text text-transparent neon-text">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent neon-text">
                 Excellence
               </span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
-              Outstanding performance in iGCSE examinations with exceptional results across multiple subjects
+              Exceptional performance across diverse subjects with consistent A* grades and innovative research contributions
             </p>
           </div>
 
-          {/* Academic Stats - Circular Design */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-500 animate-glow">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float">
-                <Star className="w-10 h-10 text-black" />
-              </div>
-              <div className="text-4xl font-bold text-green-400 mb-2 text-visible">7/10</div>
-              <p className="text-muted">Results Published</p>
+          {/* Overall Performance */}
+          <div className="glass-card mb-16 p-8 text-center border-blue-500/30">
+            <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
+              <Trophy className="w-10 h-10 text-black" />
             </div>
-            
-            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-500 animate-glow">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float delay-300">
-                <TrendingUp className="w-10 h-10 text-black" />
-              </div>
-              <div className="text-4xl font-bold text-blue-400 mb-2 text-visible">94.7%</div>
-              <p className="text-muted">Average Score</p>
-            </div>
-            
-            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-500 animate-glow">
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float delay-500">
-                <Award className="w-10 h-10 text-black" />
-              </div>
-              <div className="text-4xl font-bold text-purple-400 mb-2 text-visible">6</div>
-              <p className="text-muted">A* Grades</p>
+            <h3 className="text-3xl font-bold text-visible mb-4">Outstanding iGCSE Performance</h3>
+            <div className="text-6xl font-bold text-blue-400 mb-4 text-visible">97.5%</div>
+            <p className="text-xl text-muted mb-6">Overall Percentage Across All Published Results</p>
+            <div className="flex justify-center items-center gap-4">
+              <Badge className="bg-gradient-to-r from-green-400 to-emerald-500 text-black font-bold px-4 py-2 text-lg">
+                7 A* Grades Published
+              </Badge>
+              <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold px-4 py-2 text-lg">
+                3 Results Pending
+              </Badge>
             </div>
           </div>
 
-          {/* Subject Results - Fluid Cards */}
-          <div className="glass-card mb-12 p-8 backdrop-blur-xl">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-visible flex items-center justify-center gap-3">
-                <Zap className="w-8 h-8 text-yellow-400" />
-                iGCSE Results
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {subjects.map((subject, index) => (
-                <div key={index} className="glass-card p-6 hover:scale-105 transition-all duration-300 group">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-visible">{subject.name}</h3>
-                    <Badge className={`${getGradeColor(subject.grade)} text-black font-bold px-4 py-2 rounded-full`}>
-                      {subject.grade}
-                    </Badge>
+          {/* Published Results */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-12 text-visible flex items-center justify-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                <Star className="w-6 h-6 text-black" />
+              </div>
+              Published Results - 7 A* Grades
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {publishedResults.map((result, index) => (
+                <div key={index} className="glass-card p-6 text-center hover:scale-105 transition-all duration-500 group animate-glow">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${result.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg animate-float`} style={{ animationDelay: `${index * 0.1}s` }}>
+                    <BookOpen className="w-8 h-8 text-black" />
                   </div>
-                  
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm text-muted mb-2">
-                      <span>Score</span>
-                      <span className="text-visible font-medium">{subject.percentage}%</span>
-                    </div>
-                    <div className="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
-                      <div 
-                        className={`h-full bg-gradient-to-r ${subject.color} rounded-full transition-all duration-1000 ease-out`}
-                        style={{ width: `${subject.percentage}%` }}
-                      />
-                    </div>
-                  </div>
-                  
-                  {subject.note && (
-                    <div className="text-sm text-green-400 bg-green-500/10 p-3 rounded-xl border border-green-500/20 backdrop-blur-sm">
-                      <span className="text-visible">{subject.note}</span>
-                    </div>
-                  )}
+                  <h3 className="text-lg font-bold text-visible mb-2">{result.subject}</h3>
+                  <div className="text-3xl font-bold text-green-400 mb-2 text-visible">{result.grade}</div>
+                  <p className="text-muted font-semibold">{result.score}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Pending Results - Organic Shape */}
-          <div className="glass-card p-8 backdrop-blur-xl border-yellow-500/30">
-            <h3 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3 text-visible">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-black text-lg">⏳</span>
+          {/* Pending Results */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-12 text-visible flex items-center justify-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                <Clock className="w-6 h-6 text-black" />
               </div>
               Pending Results
-            </h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              {pendingSubjects.map((subject, index) => (
-                <div key={index} className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-2xl p-4 text-center backdrop-blur-sm hover:scale-105 transition-all duration-300">
-                  <span className="text-yellow-400 font-medium text-visible">{subject}</span>
-                  <div className="text-sm text-muted mt-1">Awaiting Results</div>
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {pendingResults.map((result, index) => (
+                <div key={index} className="glass-card p-6 text-center hover:scale-105 transition-all duration-500 group">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${result.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse`}>
+                    <Clock className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-visible mb-2">{result.subject}</h3>
+                  <p className="text-yellow-400 font-semibold">{result.status}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Achievements */}
+          <div>
+            <h2 className="text-3xl font-bold text-center mb-12 text-visible flex items-center justify-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                <Award className="w-6 h-6 text-black" />
+              </div>
+              Achievements & Recognition
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {achievements.map((achievement, index) => {
+                const IconComponent = achievement.icon;
+                return (
+                  <div key={index} className="glass-card p-6 hover:scale-105 transition-all duration-500 group animate-glow">
+                    <div className={`w-14 h-14 bg-gradient-to-r ${achievement.color} rounded-full flex items-center justify-center mb-4 shadow-lg animate-float`} style={{ animationDelay: `${index * 0.1}s` }}>
+                      <IconComponent className="w-7 h-7 text-black" />
+                    </div>
+                    <h3 className="text-xl font-bold text-visible mb-3">{achievement.title}</h3>
+                    <p className="text-muted leading-relaxed">{achievement.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -110,15 +110,15 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Quick Info Cards - Organic Flowing Shapes */}
+      {/* Quick Info Cards - Solid Colors */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Academic Excellence - Fluid Organic Shape */}
+            {/* Academic Excellence - Solid Color */}
             <div className="relative group cursor-pointer transition-all duration-500 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse" />
+              <div className="absolute -inset-1 bg-cyan-500/30 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse" />
               <div className="relative glass-card p-8 text-center backdrop-blur-xl rounded-[2rem] border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float">
+                <div className="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float">
                   <School className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-visible">Academic Excellence</h3>
@@ -132,11 +132,11 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Innovative Projects - Fluid Organic Shape */}
+            {/* Innovative Projects - Solid Color */}
             <div className="relative group cursor-pointer transition-all duration-500 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse delay-300" />
+              <div className="absolute -inset-1 bg-purple-500/30 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse delay-300" />
               <div className="relative glass-card p-8 text-center backdrop-blur-xl rounded-[2rem] border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float delay-300">
+                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float delay-300">
                   <Code className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-visible">Innovative Projects</h3>
@@ -150,11 +150,11 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Honours & Awards - Fluid Organic Shape */}
+            {/* Honours & Awards - Solid Color */}
             <div className="relative group cursor-pointer transition-all duration-500 hover:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse delay-500" />
+              <div className="absolute -inset-1 bg-yellow-500/30 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse delay-500" />
               <div className="relative glass-card p-8 text-center backdrop-blur-xl rounded-[2rem] border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float delay-500">
+                <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-float delay-500">
                   <Award className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-visible">Honours & Awards</h3>
