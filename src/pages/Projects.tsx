@@ -157,19 +157,7 @@ const Projects = () => {
             })}
           </div>
 
-          {/* Call to Action */}
-          <div className="glass-card p-8 text-center border-gradient-to-r from-purple-500/30 to-pink-500/30">
-            <h3 className="text-2xl font-bold text-visible mb-4">
-              Let's Build the Future Together
-            </h3>
-            <p className="text-muted mb-6 max-w-2xl mx-auto">
-              Passionate about transforming innovative ideas into revolutionary digital experiences. 
-              Ready to collaborate on groundbreaking projects that push technological boundaries.
-            </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-black font-bold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:scale-105 shadow-lg">
-              Start a Project
-            </button>
-          </div>
+         
         </div>
       </div>
     </div>
