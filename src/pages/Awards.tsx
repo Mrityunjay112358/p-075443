@@ -9,7 +9,7 @@ const Awards = () => {
     {
       title: "Excellence in Chemistry",
       organization: "Jayshree Periwal International School",
-      year: "2024",
+      year: "2025",
       category: "Academic Excellence",
       description: "School top achievement in Chemistry with exceptional performance",
       icon: Beaker
@@ -17,7 +17,7 @@ const Awards = () => {
     {
       title: "Excellence in French",
       organization: "Jayshree Periwal International School", 
-      year: "2024",
+      year: "2025",
       category: "Academic Excellence",
       description: "School top achievement in French language with outstanding results",
       icon: Star
