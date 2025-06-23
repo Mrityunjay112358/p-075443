@@ -9,7 +9,7 @@ const Academics = () => {
     { subject: "Business Studies", grade: "A*", score: "95%", color: "from-green-400 to-emerald-500" },
     { subject: "English Literature", grade: "A*", score: "91%", color: "from-blue-400 to-cyan-500" },
     { subject: "English Language", grade: "A*", score: "90%", color: "from-purple-400 to-violet-500" },
-    { subject: "Chemistry", grade: "A*", score: "98-99%", color: "from-yellow-400 to-orange-500" },
+    { subject: "Chemistry", grade: "A*", score: "99%", color: "from-yellow-400 to-orange-500" },
     { subject: "Additional Mathematics", grade: "A*", score: "98%", color: "from-red-400 to-pink-500" },
     { subject: "Physics", grade: "A*", score: "97%", color: "from-indigo-400 to-blue-500" },
     { subject: "French", grade: "A*", score: "97%", color: "from-teal-400 to-green-500" }
